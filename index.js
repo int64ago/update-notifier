@@ -10,14 +10,13 @@ ensureFileSync(NPM_RC);
 module.exports = ({
   scope = '',
   registry = 'https://registry.npmjs.org',
-  rewrite = false,
 } = {}) => {
-  if (scope) {
-    const config = parse(readFileSync(NPM_RC, 'utf-8'));
-    if (!config[scope + ':registry'] || rewrite) {
-      config[scope + ':registry'] = registry;
-      writeFileSync(NPM_RC, stringify(config));
-    }
+  const config = parse(readFileSync(NPM_RC, 'utf-8'));
+
+  return (options = {}) => {
+    config[`${scope || ((options.pkg || {}).name || '').split('/')[0]}:registry`] = registry;
+    writeFileSync(NPM_RC, stringify(config));
+
+    return updateNotifier(options);
   }
-  return updateNotifier;
 };
