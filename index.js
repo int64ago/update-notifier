@@ -4,7 +4,7 @@ const { readFileSync, writeFileSync, ensureFileSync } = require('fs-extra');
 const { homedir } = require('os');
 const { join } = require('path');
 
-const NPM_RC = join(homedir(), '.npmrc');
+const NPM_RC = join(homedir(), '.config/npm');
 ensureFileSync(NPM_RC);
 
 module.exports = ({
