@@ -10,6 +10,30 @@
 
 No new concept, use `update-notifier` under the hood.
 
+`npm i @hspkg/update-notifier -S`
+
+```javascript
+const chalk = require('chalk')
+const updateNotifier = require('@hspkg/update-notifier')
+const pkg = require('./package.json')
+
+const notifier = updateNotifier({
+  // optional, default is package scope
+  scope: '@ali',
+  // optional, default is https://registry.npmjs.org
+  registry: 'https://registry.npm.taobao.org',
+})({ pkg })
+
+// optional, the same as update-notifier
+notifier.update && notifier.notify({
+  message: `发现新版本 ${chalk.gray(notifier.update.current)} -> ${chalk.green(notifier.update.latest)}
+  运行 ${chalk.cyan('cnpm i -g ') + notifier.packageName} 更新`
+})
+
+// Put your code here
+```
+
+![](https://cdn.int64ago.org/bza98mea.png)
 
 ## License
 
