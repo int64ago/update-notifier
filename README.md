@@ -7,9 +7,11 @@
 
 ## Usage
 
-No new concept, use `update-notifier` under the hood.
+No new concept, use [update-notifier][update-notifier] under the hood.
 
-`npm i @hspkg/update-notifier -S`
+```bash
+npm i @hspkg/update-notifier -S
+```
 
 ```javascript
 const chalk = require('chalk')
@@ -33,6 +35,10 @@ notifier.update && notifier.notify({
 ```
 
 ![](https://cdn.int64ago.org/bza98mea.png)
+
+## Tips
+
+The tool writes custom registry into `$HOME/.config/npm` whose priority is lower than `$HOME/.npmrc`, so users can override the custom registry in `$HOME/.npmrc`.
 
 ## License
 
