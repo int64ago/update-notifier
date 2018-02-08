@@ -1,6 +1,6 @@
 {
   "name": "@hspkg/update-notifier",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "update-notifier with custom scope registry",
   "main": "index.js",
   "repository": {
