@@ -46,6 +46,6 @@ MIT © [Cody Chan](https://int64ago.org/)
 
 [npm-image]: https://img.shields.io/npm/v/@hspkg/update-notifier.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/@hspkg/update-notifier
-[downloads-image]: https://img.shields.io/npm/dt/moky.svg?style=flat-square
+[downloads-image]: https://img.shields.io/npm/dt/@hspkg/update-notifier.svg?style=flat-square
 
 [update-notifier]: https://github.com/yeoman/update-notifier
